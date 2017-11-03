@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="jquery-3.2.1.js"></script>
+  <title>Exercice 3</title>
+</head>
+<body>
+
+ <form>
+    <input type="text" name="nombre" value="" id="nombre"/>
+    <button type="button" name="button" id="valider">Valider</button>
+  </form>
+  <script>
+    var nombreSearch = Math.floor((Math.random() * 100) + 1);
+    $('#valider').click( function(){
+        if ($('#nombre').val() < nombreSearch){
+          alert('C\'est plus !');
+      } else if ($('#nombre').val() > nombreSearch) {
+          alert('C\'est moins !');
+      } else {
+          alert('C\'est bon !');
+      }
+    });
+  </script>
+</body>
+</html>
