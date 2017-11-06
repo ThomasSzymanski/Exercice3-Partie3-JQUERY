@@ -6,21 +6,28 @@
   <title>Exercice 3</title>
 </head>
 <body>
-
- <form>
-    <input type="text" name="nombre" value="" id="nombre"/>
-    <button type="button" name="button" id="valider">Valider</button>
-  </form>
+  <label>Votre choix : </label>
+  <input type="text" id="number" />
+  <button type="button" name="button" id="choix">Valider choix !</button>
   <script>
-    var nombreSearch = Math.floor((Math.random() * 100) + 1);
-    $('#valider').click( function(){
-        if ($('#nombre').val() < nombreSearch){
-          alert('C\'est plus !');
-      } else if ($('#nombre').val() > nombreSearch) {
-          alert('C\'est moins !');
-      } else {
-          alert('C\'est bon !');
-      }
+    $(function(){
+      var goodNumber = Math.floor(Math.random()*100)+1;
+      var counter = 0;
+      $('#choix').click(function(){
+        counter ++;
+        var choiceNumber = $('#number').val();
+        if(isNaN(choiceNumber)==false){
+          if(goodNumber > choiceNumber){
+            alert('Plus !');
+          } else if(goodNumber < choiceNumber){
+            alert('Moins !');
+          } else{
+            alert('Correct ! en ' + counter + ' essais !');
+          }
+        } else{
+          alert('Donnez un nombre !');
+        }
+      });
     });
   </script>
 </body>
